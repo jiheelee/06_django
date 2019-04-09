@@ -1,0 +1,16 @@
+{% extends 'movie/base.html' %}
+{% block bb %}
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+        {{movie.title}}
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">{{movie.audience}}</a>
+      <a href="#" class="list-group-item list-group-item-action">{{movie.genre}}</a>
+      <a href="#" class="list-group-item list-group-item-action">{{movie.score}}</a>
+      <a href="#" class="list-group-item list-group-item-action">{{movie.poster_url}}</a>
+      <p><a href="#" class="list-group-item list-group-item-action">{{movie.description}}</a></p>
+      <a href="{% url 'movies:main' %}" class="list-group-item list-group-item-action">목록</a>
+      <a href="{% url 'movies:update' movie.id %}" class="list-group-item list-group-item-action">수정</a>
+      <a href="{% url 'movies:delete' movie.id %}" class="list-group-item list-group-item-action">삭제</a>
+    </div>
+{% endblock %}
